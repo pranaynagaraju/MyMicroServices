@@ -1,0 +1,25 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: "ms3"
+  datasource:
+    url: jdbc:postgresql://localhost:5432/testdb  # Correcting the JDBC URL for PostgreSQL
+    driverClassName: org.postgresql.Driver  # Correcting the driver class name for PostgreSQL
+    username: postgres
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  # Correcting the Hibernate dialect for PostgreSQL
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
